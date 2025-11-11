@@ -23,7 +23,7 @@ const tooltip = d3.select("#tooltip")
 // Vars to store data
 let worldData = null;
 let csvData = {};
-let baselineData = {}; // Store 1850 baseline temperatures for % change calculation
+let baselineData = {};
 let currentYear = 1850;
 let measure = 'absolute'; // 'absolute' or 'change'
 let colorScale = null;
@@ -57,21 +57,12 @@ Promise.all([
                 csvData[year] = {};
             }
             
-            if (value !== null && !isNaN(value)) {
-                const baseline = baselineData[isoCode];
-                let percentChange = null;
-                
-                // Calculate percentage change from baseline (1850)
-                if (baseline !== undefined && baseline !== null && baseline !== 0) {
-                    percentChange = ((value - baseline) / baseline) * 100;
-                }
-                
+            if (value !== null && !isNaN(value)) {                
                 csvData[year][isoCode] = {
                     country: d.country,
                     value: value,
                     change: d.avg_temp_change ? +d.avg_temp_change : null,
-                    percentChange: percentChange,
-                    baseline: baseline
+                    percentChange: d.avg_temp_change ? +d.avg_temp_change : null,
                 };
             }
         });
