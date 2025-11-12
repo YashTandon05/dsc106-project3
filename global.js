@@ -233,6 +233,7 @@ function drawMap(year) {
                         tooltipHtml += `Δ Temperature: N/A`;
                     }
                 }
+                tooltipHtml += '<br/>(click to view temperature history)';
                 
                 tooltip
                     .style('opacity', 1)
