@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Visualizing Global Warming</title>
     <script src="global.js" type="module"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1 style="text-align: center;">How "Global" is Global Warming?</h1>
-    <div id="controls">
-        <label for="yearSlider">Year: <span id="yearValue">2014</span></label>
-        <input type="range" id="yearSlider" min="1850" max="2014" value="2014" step="1">
-        <label for="measureSelect">Select Measure Type:
-            <select id="measureSelect" name="measure">
-                <option value="absolute">Absolute (°C)</option>
-                <option value="change">% Change</option>
-            </select>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 style="text-align: center">How "Global" is Global Warming?</h1>
+    <div id="visualizationContainer">
+      <div id="measureToggle">
+        <span class="toggle-label">Absolute (°C)</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="measureCheckbox" />
+          <span class="slider"></span>
         </label>
+        <span class="toggle-label">% Change</span>
+      </div>
+      <svg id="map"></svg>
+      <div id="yearSliderContainer">
+        <label for="yearSlider"><span id="yearValue">Year: 2014</span> </label>
+        <input
+          type="range"
+          id="yearSlider"
+          min="1850"
+          max="2014"
+          value="2014"
+          step="1"
+        />
+      </div>
     </div>
     <div id="tooltip"></div>
-    <svg id="map"></svg>
-</body>
+    <div id="modal" style="display: none"></div>
+  </body>
 </html>

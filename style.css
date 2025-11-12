@@ -5,41 +5,98 @@ body {
     padding: 5ch;
 }
 
-#controls {
+#visualizationContainer {
+    position: relative;
     margin: 20px 0;
-    padding: 10px;
-    background: #f5f5f5;
+}
+
+#measureToggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px 15px;
     border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    font-size: 0.9em;
+}
+
+.toggle-label {
+    font-size: 0.9em;
+    user-select: none;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    margin: 0;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2196F3;
+    transition: 0.3s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+.toggle-switch input:checked + .slider {
+    background-color: #36c36f;
+}
+
+.toggle-switch input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+#yearSliderContainer {
     text-align: center;
+    margin-top: 20px;
+    padding: 15px 0;
+    width: 100%;
+}
+
+#yearSliderContainer label {
+    display: block;
+    margin-bottom: 10px;
 }
 
 #yearSlider {
-    width: 300px;
-    margin-left: 10px;
+    width: 70%;
+    max-width: 70%;
+    margin: 0;
 }
 
 #yearValue {
     font-weight: bold;
     font-size: 1.2em;
-}
-
-#measureToggle {
-    display: inline-flex;
-    gap: 15px;
-    margin-left: 20px;
-    align-items: center;
-}
-
-#measureToggle label {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
-    font-size: 0.9em;
-}
-
-#measureToggle input[type="radio"] {
-    cursor: pointer;
 }
 
 .country {
@@ -53,6 +110,76 @@ body {
 #map {
     display: block;
     margin: 0 auto;
-    border: 1px solid #ddd;
-    background: #f9f9f9;
+    border: 0px solid #ddd;
+    background: white;
+    padding-top: 50px;
+}
+
+#tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    pointer-events: none;
+    opacity: 0;
+    font-size: 14px;
+    z-index: 10000;
+}
+
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    position: relative;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    background: none;
+    border: none;
+    line-height: 20px;
+}
+
+.close-button:hover {
+    color: #000;
+}
+
+.line-graph-container {
+    margin-top: 20px;
+}
+
+.axis-label {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.line-graph-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
 }
