@@ -95,15 +95,54 @@
       </p>
       <h3>Visual Encoding Choices:</h3>
       <p>
-        To represent our data clearly, we use countries as area marks and color as the main visual encoding channel. According to principles from the DSC 106 Perception lecture, color hue and intensity are especially effective for showing continuous quantitative values like temperature. For absolute temperature (°C), we use a sequential color scale that goes from cool blues to warm reds. This creates a natural low-to-high progression that viewers can easily understand. For percent change, we use a diverging red–blue color scale that is centered at zero. Diverging scales are recommended when the data has a meaningful midpoint (in our case, no change). Regions that cooled or warmed show up clearly because positive and negative changes appear on opposite sides of the color spectrum. Our legend reinforces this encoding by showing the numeric range, color transitions, and the correct units. These design choices follow the expressiveness and effectiveness guidelines from class, ensuring our colors correctly communicate the structure of the data.
+        To represent our data clearly, we use countries as area marks and color as the main visual encoding channel. According to principles from the DSC 106 Perception lecture, color hue and intensity are especially effective for showing continuous quantitative values like temperature.
+        <br />
+        <br />
+        For absolute temperature (°C), we use a sequential color scale that goes from cool blues to warm reds. This creates a natural low-to-high progression that viewers can easily understand.
+        <br />
+        <br />
+        For percent change, we use a diverging red–blue color scale that is centered at zero. Diverging scales are recommended when the data has a meaningful midpoint (in our case, no change). Regions that cooled or warmed show up clearly because positive and negative changes appear on opposite sides of the color spectrum.
+        <br />
+        <br />
+        Our legend reinforces this encoding by showing the numeric range, color transitions, and the correct units. These design choices follow the expressiveness and effectiveness guidelines from class, ensuring our colors correctly communicate the structure of the data.
       </p>
       <h3>Interaction Design:</h3>
       <p>
-        We implemented several useful interaction types from Yi et al. (2007) to make the visualization exploratory rather than static. Filtering (Dynamic Query): The year slider lets users explore trends from 1850 to 2014. This makes temporal changes clear because users can quickly move through decades and immediately see how temperatures shift in different parts of the world. Parameterize: The toggle switch allows users to choose between two modes: • Absolute temperature (°C) • Percent change from baseline This gives users control over what type of information they want to focus on. Select: Hovering over a country outlines the border and shows a tooltip with temperature details. Details-on-Demand: Clicking a country opens a modal window with a time-series line chart (raw data + Kalman-smoothed line). This provides a deeper look at long-term trends. Explore: Zoom and pan allow users to inspect smaller countries and regions closely. Together, these interactions help users discover spatial and temporal patterns that would be missed in a static graphic.
+        We implemented several useful interaction types from Yi et al. (2007) to make the visualization exploratory rather than static.
+        <br />
+        <br />
+        Filtering (Dynamic Query): The year slider lets users explore trends from 1850 to 2014. This makes temporal changes clear because users can quickly move through decades and immediately see how temperatures shift in different parts of the world.
+        <br />
+        <br />
+        Parameterize: The toggle switch allows users to choose between two modes: • Absolute temperature (°C) • Percent change from baseline. This gives users control over what type of information they want to focus on.
+        <br />
+        <br />
+        Select: Hovering over a country outlines the border and shows a tooltip with temperature details.
+        <br />
+        <br />
+        Details-on-Demand: Clicking a country opens a modal window with a time-series line chart (raw data + Kalman-smoothed line). This provides a deeper look at long-term trends.
+        <br />
+        <br />
+        Explore: Zoom and pan allow users to inspect smaller countries and regions closely.
+        <br />
+        <br />
+        Together, these interactions help users discover spatial and temporal patterns that would be missed in a static graphic.
       </p>
       <h3>Insights and Findings:</h3>
       <p>
-        Our visualization highlights several important climate patterns: Polar regions are warming the fastest. Northern countries like Russia and Canada show strong warming, especially in percent-change mode (polar amplification). Tropical areas warm more slowly. Equatorial countries show smaller warming values overall. Rapid warming after the 1970s. The modal line charts show a clear acceleration starting around 1975. Regional differences even among neighbors. For example, Iran and Egypt warm more sharply in recent decades compared to some surrounding regions.
+        Our visualization highlights several important climate patterns:
+        <br />
+        <br />
+        Polar regions are warming the fastest. Northern countries like Russia and Canada show strong warming, especially in percent-change mode (polar amplification).
+        <br />
+        <br />
+        Tropical areas warm more slowly. Equatorial countries show smaller warming values overall.
+        <br />
+        <br />
+        Rapid warming after the 1970s. The modal line charts show a clear acceleration starting around 1975.
+        <br />
+        <br />
+        Regional differences even among neighbors. For example, Iran and Egypt warm more sharply in recent decades compared to some surrounding regions.
       </p>
       <h3>Future Work / Creativity:</h3>
       <p>
