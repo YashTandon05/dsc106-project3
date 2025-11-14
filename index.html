@@ -95,28 +95,32 @@
       </p>
       <h3>Visual Encoding Choices:</h3>
       <p>
-        To represent our data clearly, we use countries as area marks and color
-        as the main visual encoding channel. According to principles from the 
-        DSC 106 Perception lecture, color hue and intensity are especially 
-        effective for showing continuous quantitative values like temperature.
+        While the Rationale explains why we chose a choropleth map and a red, blue palette, 
+        here we describe our visual encoding choices more formally using concepts from the 
+        DSC 106 Perception lectures.
         <br />
         <br />
-        For absolute temperature (degree Celsius), we use a sequential color scale that goes 
-        from cool blues to warm reds. This creates a natural low-to-high progression 
-        that viewers can easily understand.
+        We represent each country using area marks (the geographic polygons), and the main 
+        visual channel we rely on is color. Color hue and luminance are effective channels 
+        for showing continuous quantitative data such as temperature.
         <br />
         <br />
-        For percent change, we used a diverging red–blue color scale that is centered 
-        at zero. Diverging scales are recommended when the data has a meaningful 
-        midpoint (in our case, no change). Regions that cooled or warmed show up 
-        clearly because positive and negative changes appear on opposite sides of the 
-        color spectrum.
+        For absolute temperature (degree Celsius), we use a sequential color scale that 
+        transitions from cool blues to warm reds. This creates a clear low-to-high progression 
+        that most viewers interpret instinctively.
         <br />
         <br />
-        Our legend reinforces this encoding by showing the numeric range, color transitions, 
-        and the correct units. These design choices follow the expressiveness and 
-        effectiveness guidelines from class, ensuring our colors correctly communicate 
-        the structure of the data.
+        For percent change, we use a diverging red, blue scale centered at zero. Diverging 
+        palettes are recommended when the data has a meaningful midpoint, in this case, 
+        "no change." Values above and below zero appear on opposite sides of the spectrum, 
+        making warming vs cooling immediately distinguishable.
+        <br />
+        <br />
+        The legend reinforces these encodings by showing the numeric range, color transitions, 
+        midpoint, and units. These decisions follow the principles of expressiveness (color 
+        correctly maps to magnitude and direction) and effectiveness (color is an appropriate 
+        channel for global temperature variation), ensuring that viewers can understand the 
+        patterns without additional explanation.
       </p>
       <h3>Interaction Design:</h3>
       <p>
